@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_primary">#673AB7</color>
+    <color name="purple_primary_variant">#512DA8</color>
+    <color name="card_bg">#1E1E1E</color>
+    <color name="alert_red">#F44336</color>
+    <color name="text_secondary">#999999</color>
+
+    <!-- Status Colors -->
+    <color name="status_inside">#4CAF50</color>
+    <color name="status_left">#757575</color>
+    <color name="status_restricted">#F44336</color>
+
+    <color name="ripple_light">#20FFFFFF</color>
+    <color name="ripple_dark">#10000000</color>
+
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+</resources>

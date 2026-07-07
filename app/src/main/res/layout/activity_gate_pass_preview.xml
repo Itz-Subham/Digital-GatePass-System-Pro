@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_medium"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gate_pass_preview"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <!-- Preview Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/hallpassCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/corner_radius_normal"
+            app:cardElevation="@dimen/card_elevation"
+            android:layout_marginBottom="@dimen/spacing_xlarge"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_large"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/official_hallpass"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                    android:textColor="@color/purple_primary"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="@dimen/spacing_normal"/>
+
+                <TextView
+                    android:id="@+id/previewStudentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student Name"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/previewStudentReg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reg No: ---"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="@dimen/spacing_normal"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="@dimen/spacing_normal"/>
+
+                <TextView
+                    android:id="@+id/previewVisitorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visitor Name"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/previewEntryTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entry Time: --:--"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="@dimen/spacing_large"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="@dimen/spacing_large"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scan_to_verify"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+                    android:textColor="@color/alert_red"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/spacing_small"/>
+
+                <ImageView
+                    android:id="@+id/ivHandshakeQr"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:scaleType="fitCenter"
+                    android:padding="@dimen/spacing_small"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    android:contentDescription="@string/handshake_qr_desc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: [DOC_ID]"
+                    android:id="@+id/tvDocIdDisplay"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+                    android:textColor="#999999" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSharePass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/share_pass"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            style="@style/Widget.Material3.Button.TonalButton"
+            app:icon="@android:drawable/ic_menu_share"
+            app:cornerRadius="@dimen/corner_radius_round"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/done"
+            android:textStyle="bold"
+            style="@style/Widget.Material3.Button"
+            app:cornerRadius="@dimen/corner_radius_round"/>
+
+    </LinearLayout>
+</ScrollView>

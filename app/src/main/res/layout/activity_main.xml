@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top Guidance Overlay -->
+    <LinearLayout
+        android:id="@+id/resultCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="70dp"
+        android:paddingBottom="24dp"
+        android:paddingHorizontal="24dp"
+        android:background="#B3000000"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/scanResultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/align_id_frame"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:letterSpacing="0.02" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/ocr_steady_guidance"
+            android:textColor="#CCFFFFFF"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/spacing_normal"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scanner Frame -->
+    <View
+        android:id="@+id/scan_frame"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:background="@drawable/scan_frame_border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/torchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:src="@android:drawable/ic_menu_compass"
+        app:backgroundTint="#80000000"
+        app:tint="@color/white"
+        app:fabSize="normal"
+        android:contentDescription="@string/torch_desc"
+        app:layout_constraintBottom_toTopOf="@id/captureBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/captureBtn"
+        android:layout_width="280dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="64dp"
+        android:text="Scan Aadhaar Card"
+        android:backgroundTint="#FF9800"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/corner_radius_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

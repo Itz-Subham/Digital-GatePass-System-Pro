@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">GatePass</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Security Dashboard</string>
+    <string name="welcome_message">Welcome, Security Admin</string>
+    <string name="tap_to_scan">SCAN AADHAAR CARD</string>
+    <string name="ocr_tagline">Automatic ID Verification</string>
+    <string name="management_header">MANAGEMENT</string>
+    <string name="manual_entry">Manual Entry</string>
+    <string name="checkout_mode">Checkout Mode</string>
+    <string name="active_visitors">Active Visitors</string>
+    <string name="history">History</string>
+    <string name="security_list">Security List</string>
+    <string name="admin_panel">Admin Panel</string>
+    <string name="stat_today">Today</string>
+    <string name="stat_inside">Inside</string>
+    <string name="stat_alerts">Alerts</string>
+    <string name="search_hint">Search Name or Reg No&#8230;</string>
+
+    <!-- Scanner -->
+    <string name="align_id_frame">Align ID within the frame</string>
+    <string name="ocr_steady_guidance">Hold steady to verify ID</string>
+    <string name="torch_desc">Toggle Torch</string>
+    <string name="confirm_identity">SCAN AADHAAR CARD</string>
+    <string name="align_qr_frame">Align Pass QR Code</string>
+    <string name="manual_selection">Manual Selection</string>
+    <string name="status_blurry">Status: Too Blurry</string>
+    <string name="status_scanning">Scanning Aadhaar Card&#8230;</string>
+    <string name="status_verifying">Verifying Stability&#8230;</string>
+    <string name="status_verified">VERIFIED</string>
+
+    <!-- Form -->
+    <string name="gate_pass_details">Gate Pass Details</string>
+    <string name="form_guidance">Please verify all information before generating the pass.</string>
+    <string name="restricted_warning">⚠️ WARNING: Restricted Individual</string>
+    <string name="visitor_name_hint">Visitor Name</string>
+    <string name="entry_time_hint">Entry Time</string>
+    <string name="student_reg_hint">Student Registration Number</string>
+    <string name="verified_student_hint">Verified Student Name</string>
+    <string name="generate_pass">GENERATE GATE PASS</string>
+    <string name="student_not_found">Student not found in database</string>
+    <string name="student_verified_helper">Student Verified: %1$s</string>
+
+    <!-- Lists & States -->
+    <string name="no_records_found">No records found</string>
+    <string name="empty_state_guidance">Try refreshing or changing your search</string>
+    <string name="no_restricted_found">No restricted individuals</string>
+    <string name="no_active_visitors">No active visitors found</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="visitor_records">Visitor Records</string>
+    <string name="manual_selection_desc">Select a visitor profile to continue with checkout.</string>
+    <string name="security_list_desc">Individuals restricted from entry points.</string>
+    <string name="add_to_list">Add to list</string>
+    <string name="search_records">Search records&#8230;</string>
+
+    <!-- Pass & Preview -->
+    <string name="gate_pass_generated">Gate Pass Generated</string>
+    <string name="official_gate_pass">OFFICIAL GATE PASS</string>
+    <string name="scan_at_exit">SCAN AT EXIT TO DEPART</string>
+    <string name="finish">FINISH</string>
+    <string name="done">DONE</string>
+    <string name="share_pass">Share Pass Image</string>
+    <string name="official_hallpass">OFFICIAL DIGITAL HALLPASS</string>
+    <string name="guard_exit_notice">GUARD: SCAN FOR CHECKOUT</string>
+    <string name="hallpass_guidance">Please keep this screen open until you leave the premises.</string>
+    <string name="visitor_scan_guidance">Visitor: Scan to get digital copy</string>
+    <string name="gate_pass_preview">Gate Pass Preview</string>
+    <string name="scan_to_verify">SCAN TO VERIFY</string>
+    <string name="handshake_qr_desc">Handshake QR</string>
+    <string name="checkout_qr_desc">Checkout QR</string>
+
+    <!-- Admin -->
+    <string name="administrator_panel">Administrator Panel</string>
+
+    <string name="system_audit_ready">System audit ready</string>
+    <string name="restrict_individual">Restrict Individual</string>
+    <string name="full_name">Full Name</string>
+    <string name="id_optional">Identification Number (Optional)</string>
+    <string name="system_lookup">System Lookup</string>
+    <string name="name_reg_lookup">Name or Registration Number</string>
+    <string name="exit_clearance">Exit Clearance</string>
+    <string name="confirm_exit">CONFIRM EXIT</string>
+    <string name="student_details">STUDENT DETAILS</string>
+    <string name="visitor_details">VISITOR DETAILS</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Actions -->
+    <string name="back">Back</string>
+</resources>
