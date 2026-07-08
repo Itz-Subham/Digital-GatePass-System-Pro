@@ -7,7 +7,7 @@ An extended version of my original [Digital-GatePass-System](https://github.com/
 ## What's different from the original
 
 - Runs on a fully self-owned Firebase project (Firestore + Hosting), not a shared/borrowed backend
-- New features coming soon as I make em ;-;
+- [Add your new features here as you build them — e.g. admin analytics, push notifications, role-based auth]
 
 ---
 
@@ -95,21 +95,19 @@ Used to verify who a visitor is visiting.
 | name | string | `Priya Mohanty` |
 
 ### `visitors`
-One document per visitor entry.
+One document per visitor entry. Written entirely by the app (`GatePassFormActivity`) — you don't need to seed this manually, it populates the first time you generate a gate pass.
 
 | Field | Type | Example |
 |---|---|---|
 | visitorName | string | `Subham Singh` |
 | visitorNameLower | string | `subham singh` (lowercase copy, used for search queries) |
 | visitorIdHash | string | SHA-256 hash of Aadhaar number |
-| studentReg | string | `2341041062` |
-| studentName | string | `Priya Mohanty` |
+| studentReg | string | `2341041062`, or `"N/A"` if not visiting a student |
+| studentName | string | `Priya Mohanty`, or `"N/A"` if not visiting a student |
 | hasStudentVisit | boolean | `true` |
-| entryTime | string | `11:03` |
-| exitTime | string | empty until checkout |
-| exitTimestamp | number | empty until checkout |
-| timestamp | number | Unix epoch, used for `orderBy`/range queries |
-| status | string | `"pending"` or `"Left"` |
+| entryTime | Firestore Timestamp | set via `Timestamp.now()` |
+| timestamp | number | Unix epoch (millis), used for `orderBy`/range queries |
+| status | string | `"pending"` initially, updated on checkout |
 
 ### `blacklist`
 Restricted individuals, hashed rather than stored in plain text.
@@ -128,8 +126,7 @@ Restricted individuals, hashed rather than stored in plain text.
 - Aadhaar numbers are never stored in plain text — only their SHA-256 hash.
 - Verhoeff checksum validation prevents invalid Aadhaar entries.
 - Blacklist verification is performed before pass generation.
-
-**Known limitation (being worked on):** admin/guard login currently compares the `password` field in Firestore directly, without hashing. This is fine for a local demo but should not be treated as production-secure until passwords are hashed the same way Aadhaar numbers are.
+- **Self-migrating password security**: `LoginActivity` verifies passwords via `HashUtils.verifyPassword()`, which accepts either a hashed or legacy plaintext value. The first time an account with a plaintext password logs in successfully, it's automatically re-hashed (SHA-256) and persisted back to Firestore — so accounts transparently upgrade to secure storage without requiring a manual password reset.
 
 ---
 
@@ -151,7 +148,7 @@ Restricted individuals, hashed rather than stored in plain text.
 2. Open the project in Android Studio.
 3. Create your own Firebase project at [console.firebase.google.com](https://console.firebase.google.com), register an Android app with package name `com.example.gatepass`, and download your own `google-services.json`.
 4. Place `google-services.json` in the `app/` directory. This file is gitignored and **not included in the repo** — the app will not build without your own copy.
-5. In Firestore, manually create the collections described above (`users`, `students`, `visitors`, `blacklist`) with at least one seed document each so login and lookups have something to query.
+5. In Firestore, manually create just two collections to get started: `users` (one document with `username`, `password`, `role`, `active` fields, so you have something to log in with) and `students` (one document with `name` and `regNo`, so the "visiting a student" lookup has something to find). `visitors` and `blacklist` populate automatically the first time you use the app.
 6. Sync Gradle.
 7. Build and run the application.
 
@@ -159,7 +156,6 @@ Restricted individuals, hashed rather than stored in plain text.
 
 ## Future Improvements
 
-- Hash admin/guard passwords instead of storing them in plaintext
 - Admin dashboard analytics
 - Push notifications
 - Multi-campus support
@@ -170,7 +166,5 @@ Restricted individuals, hashed rather than stored in plain text.
 ## Author
 
 **Subham Singh**
-
 BCA Student | Android Developer
-
 GitHub: [github.com/itz-subham](https://github.com/itz-subham)
