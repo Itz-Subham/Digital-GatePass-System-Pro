@@ -166,5 +166,7 @@ Restricted individuals, hashed rather than stored in plain text.
 ## Author
 
 **Subham Singh**
+
 BCA Student | Android Developer
+
 GitHub: [github.com/itz-subham](https://github.com/itz-subham)
