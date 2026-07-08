@@ -7,7 +7,7 @@ An extended version of my original [Digital-GatePass-System](https://github.com/
 ## What's different from the original
 
 - Runs on a fully self-owned Firebase project (Firestore + Hosting), not a shared/borrowed backend
-- [Add your new features here as you build them — e.g. admin analytics, push notifications, role-based auth]
+- New features coming soon as I make em ;-;
 
 ---
 
