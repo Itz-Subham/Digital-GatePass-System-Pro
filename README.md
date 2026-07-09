@@ -127,6 +127,8 @@ Restricted individuals, hashed rather than stored in plain text.
 - Verhoeff checksum validation prevents invalid Aadhaar entries.
 - Blacklist verification is performed before pass generation.
 - **Self-migrating password security**: `LoginActivity` verifies passwords via `HashUtils.verifyPassword()`, which accepts either a hashed or legacy plaintext value. The first time an account with a plaintext password logs in successfully, it's automatically re-hashed (SHA-256) and persisted back to Firestore — so accounts transparently upgrade to secure storage without requiring a manual password reset.
+  tldr; When a legacy user logs in successfully, the application
+automatically replaces the plaintext password with its SHA-256 hash.
 
 ---
 
@@ -167,6 +169,6 @@ Restricted individuals, hashed rather than stored in plain text.
 
 **Subham Singh**
 
-BCA Student | Android Developer
+Android Developer
 
 GitHub: [github.com/itz-subham](https://github.com/itz-subham)
